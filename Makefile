@@ -67,7 +67,7 @@ build: ## Build the Docker image for the OTP release
 
 .PHONY: ci-build
 ci-build:
-	docker build . --tag thing --cache-from=docker.pkg.github.com/$(GITHUB_REPOSITORY)/docker-cache --build-arg APP_NAME=$(APP_NAME) --build-arg APP_VERSION=$(APP_VERSION)
+	docker build --tag thing --cache-from=docker.pkg.github.com/$(GITHUB_REPOSITORY)/docker-cache --build-arg APP_NAME=$(APP_NAME) --build-arg APP_VERSION=$(APP_VERSION) .
 
 .PHONY: push
 push: ## Push the Docker image to the registry
